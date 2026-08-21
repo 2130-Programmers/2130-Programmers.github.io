@@ -1,0 +1,62 @@
+{
+  "team": {
+    "name": "Alpha 2130",
+    "tagline": "Robots, resources, and the people who build them.",
+    "about": "This wiki is the home base for our team. Browse every robot we've built and every subteam that builds them from the sidebar, or jump in below. Everything on this site is edited from a single data.json file \u2014 see the Admin page to make changes.",
+    "logo": "images/logo.png",
+    "accentColor": "#0969da"
+  },
+  "robots": [
+    {
+      "id": "example-bot",
+      "name": "Example Bot",
+      "year": 2026,
+      "github": "https://github.com/your-org/example-bot",
+      "image": "images/example-bot.jpg",
+      "description": "Replace this with a real robot. Describe the game strategy, standout mechanisms, and what made this robot unique. Delete this entry once you've added your own robots in the Admin page."
+    }
+  ],
+  "subteams": [
+    {
+      "id": "cad",
+      "name": "CAD",
+      "description": "Designs the robot in 3D before it's built, iterating on mechanisms and checking for fit and function.",
+      "resources": [
+        { "label": "CAD Style Guide", "url": "https://example.com" },
+        { "label": "Onshape Workspace", "url": "https://example.com" }
+      ]
+    },
+    {
+      "id": "programming",
+      "name": "Programming",
+      "description": "Writes and tests the code that drives the robot's mechanisms, autonomous routines, and driver controls.",
+      "resources": [
+        { "label": "Programming Wiki", "url": "https://example.com" }
+      ]
+    },
+    {
+      "id": "build",
+      "name": "Build",
+      "description": "Fabricates and assembles the robot from raw stock and CAD designs.",
+      "resources": [
+        { "label": "Shop Safety Guide", "url": "https://example.com" }
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "description": "Handles outreach, fundraising, awards submissions, and team documentation.",
+      "resources": [
+        { "label": "Awards Guide", "url": "https://example.com" }
+      ]
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical",
+      "description": "Wires and maintains the robot's electrical systems, from battery to sensors.",
+      "resources": [
+        { "label": "Wiring Standards", "url": "https://example.com" }
+      ]
+    }
+  ]
+}

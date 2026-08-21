@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Wiki</title>
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+  <div class="wiki">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="content">
+      <h1 id="team-name">Loading&hellip;</h1>
+      <p class="tagline" id="team-tagline"></p>
+      <p id="team-about"></p>
+
+      <section>
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="robots.html">Browse all robots</a></li>
+          <li><a href="subteams.html">Browse subteams &amp; resources</a></li>
+          <li><a href="admin.html">Edit this wiki</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script src="js/theme.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

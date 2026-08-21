@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Robots &middot; Team Wiki</title>
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="robots">
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+  <div class="wiki">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="content">
+      <h1>Robots</h1>
+      <p class="tagline">Every robot the team has built, with links back to the code.</p>
+      <div id="robot-list"></div>
+    </main>
+  </div>
+  <script src="js/theme.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin &middot; Team Wiki</title>
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+  <div class="admin-bar">
+    <strong>Edit Wiki Data</strong>
+    <div>
+      <a href="index.html">&larr; Back to wiki</a>
+    </div>
+  </div>
+
+  <main class="admin-main">
+    <div id="status-banner"></div>
+
+    <p class="help-text">
+      Edit anything below, then click <strong>Download data.json</strong> and replace the
+      <code>data.json</code> file in your repo with the downloaded one (then commit &amp; push).
+      Add any images to the <code>images/</code> folder in your repo &mdash; the file path fields
+      below just need to point at them, e.g. <code>images/my-robot.jpg</code>.
+    </p>
+
+    <div class="field">
+      <label for="load-file">Load a data.json file to edit</label>
+      <input type="file" id="load-file" accept="application/json" />
+    </div>
+
+    <fieldset>
+      <legend>Team Info &amp; Branding</legend>
+      <div class="field">
+        <label for="team-name-input">Team name</label>
+        <input type="text" id="team-name-input" />
+      </div>
+      <div class="field">
+        <label for="team-tagline-input">Tagline</label>
+        <input type="text" id="team-tagline-input" />
+      </div>
+      <div class="field">
+        <label for="team-about-input">About (shown on homepage)</label>
+        <textarea id="team-about-input"></textarea>
+      </div>
+      <div class="field">
+        <label for="team-logo-input">Logo path</label>
+        <input type="text" id="team-logo-input" placeholder="images/logo.png" />
+        <div class="help-text">Copy your logo file into images/, then point this at it (e.g. images/logo.png). Shows in the sidebar and as the browser tab icon.</div>
+        <input type="file" id="team-logo-file" accept="image/*" />
+        <img id="team-logo-preview" class="image-preview" />
+      </div>
+      <div class="field">
+        <label for="team-accent-input">Accent color</label>
+        <input type="color" id="team-accent-input" />
+        <div class="help-text">Used for links, buttons, and highlights on the site.</div>
+      </div>
+    </fieldset>
+
+    <h2 class="admin-section-title">Robots</h2>
+    <div id="robots-editor"></div>
+    <button id="add-robot" class="primary">+ Add robot</button>
+
+    <h2 class="admin-section-title">Subteams</h2>
+    <div id="subteams-editor"></div>
+    <button id="add-subteam" class="primary">+ Add subteam</button>
+
+    <hr style="margin: 32px 0; border: none; border-top: 1px solid var(--border);" />
+
+    <button id="download-json" class="primary">Download data.json</button>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
